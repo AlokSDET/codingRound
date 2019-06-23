@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Vagrant" verbose="10">
 
-  <test name="Vagrant Test 1" ><!--@BeforeTest runs here just once-->
-    <classes>
-      <class name="com.vagrant.testCases.FlightBookingTest"/>
-      <class name="com.vagrant.testCases.HotelBookingTest"/>
-      <class name="com.vagrant.testCases.SignInTest"/>
-    </classes>
- </test> <!--@AfterTest runs here just once-->
- 
+	<test name="Vagrant Test 1"><!--@BeforeTest runs here just once -->
+		<classes>
+			<class name="com.vagrant.testCases.FlightBookingTest" />
+			<class name="com.vagrant.testCases.HotelBookingTest" />
+			<class name="com.vagrant.testCases.SignInTest" />
+		</classes>
+	</test> <!--@AfterTest runs here just once -->
+
 </suite>
