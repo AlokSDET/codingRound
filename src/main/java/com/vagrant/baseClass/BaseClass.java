@@ -1,6 +1,6 @@
-package com.vagrant.BaseClass;
+package com.vagrant.baseClass;
 
-import static com.vagrant.Util.Constant.PROPERTY_FILE_PATH;
+import static com.vagrant.util.Constant.PROPERTY_FILE_PATH;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,7 +18,7 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.vagrant.Util.Vagrant_Utility;
+import com.vagrant.util.Vagrant_Utility;
 
 public class BaseClass {
 

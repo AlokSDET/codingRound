@@ -1,9 +1,9 @@
-package com.vagrant.Pages;
+package com.vagrant.pages;
 
-import static com.vagrant.Util.Vagrant_Utility.clickElement;
-import static com.vagrant.Util.Vagrant_Utility.implicitwait;
-import static com.vagrant.Util.Vagrant_Utility.sendKeys;
-import static com.vagrant.Util.Vagrant_Utility.explicitwait;
+import static com.vagrant.util.Vagrant_Utility.clickElement;
+import static com.vagrant.util.Vagrant_Utility.explicitwait;
+import static com.vagrant.util.Vagrant_Utility.implicitwait;
+import static com.vagrant.util.Vagrant_Utility.sendKeys;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.vagrant.BaseClass.BaseClass;
-import com.vagrant.Util.Vagrant_Utility;
+import com.vagrant.baseClass.BaseClass;
+import com.vagrant.util.Vagrant_Utility;
 
 public class Vagrant_FlightBooking extends BaseClass {
 

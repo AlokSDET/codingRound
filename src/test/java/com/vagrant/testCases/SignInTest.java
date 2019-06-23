@@ -1,4 +1,4 @@
-package com.vagrant.TestCases;
+package com.vagrant.testCases;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,9 +7,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.vagrant.BaseClass.BaseClass;
-import com.vagrant.Pages.Vagrant_SignIn;
-import com.vagrant.Util.Vagrant_Utility;
+import com.vagrant.baseClass.BaseClass;
+import com.vagrant.pages.Vagrant_SignIn;
+import com.vagrant.util.Vagrant_Utility;
 
 public class SignInTest extends BaseClass {
 

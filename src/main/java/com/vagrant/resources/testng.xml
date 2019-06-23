@@ -3,9 +3,9 @@
 
   <test name="Vagrant Test 1" ><!--@BeforeTest runs here just once-->
     <classes>
-      <class name="com.vagrant.TestCases.FlightBookingTest"/>
-      <class name="com.vagrant.TestCases.HotelBookingTest"/>
-      <class name="com.vagrant.TestCases.SignInTest"/>
+      <class name="com.vagrant.testCases.FlightBookingTest"/>
+      <class name="com.vagrant.testCases.HotelBookingTest"/>
+      <class name="com.vagrant.testCases.SignInTest"/>
     </classes>
  </test> <!--@AfterTest runs here just once-->
  

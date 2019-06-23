@@ -1,8 +1,8 @@
-package com.vagrant.TestCases;
+package com.vagrant.testCases;
 
-import static com.vagrant.Util.Vagrant_Utility.checkPageIsReady;
-import static com.vagrant.Util.Vagrant_Utility.clickElement;
-import static com.vagrant.Util.Vagrant_Utility.waitFor;
+import static com.vagrant.util.Vagrant_Utility.checkPageIsReady;
+import static com.vagrant.util.Vagrant_Utility.clickElement;
+import static com.vagrant.util.Vagrant_Utility.waitFor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,8 +14,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.vagrant.BaseClass.BaseClass;
-import com.vagrant.Pages.Vagrant_HotelBooking;
+import com.vagrant.baseClass.BaseClass;
+import com.vagrant.pages.Vagrant_HotelBooking;
 
 public class HotelBookingTest extends BaseClass {
 

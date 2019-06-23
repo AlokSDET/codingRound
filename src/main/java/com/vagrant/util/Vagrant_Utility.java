@@ -1,4 +1,4 @@
-package com.vagrant.Util;
+package com.vagrant.util;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.sun.javafx.PlatformUtil;
-import com.vagrant.BaseClass.BaseClass;
+import com.vagrant.baseClass.BaseClass;
 
 @SuppressWarnings("restriction")
 public class Vagrant_Utility extends BaseClass {

@@ -1,4 +1,4 @@
-package com.vagrant.Util;
+package com.vagrant.util;
 
 public class Constant {
 

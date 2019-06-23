@@ -1,10 +1,9 @@
-package com.vagrant.TestCases;
+package com.vagrant.testCases;
 
-//use of import static
-import static com.vagrant.Util.Vagrant_Utility.checkPageIsReady;
-import static com.vagrant.Util.Vagrant_Utility.clickElement;
-import static com.vagrant.Util.Vagrant_Utility.isElementPresent;
-import static com.vagrant.Util.Vagrant_Utility.waitFor;
+import static com.vagrant.util.Vagrant_Utility.checkPageIsReady;
+import static com.vagrant.util.Vagrant_Utility.clickElement;
+import static com.vagrant.util.Vagrant_Utility.isElementPresent;
+import static com.vagrant.util.Vagrant_Utility.waitFor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,8 +15,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.vagrant.BaseClass.BaseClass;
-import com.vagrant.Pages.Vagrant_FlightBooking;
+import com.vagrant.baseClass.BaseClass;
+import com.vagrant.pages.Vagrant_FlightBooking;
 
 //use of inheritance oops concept
 public class FlightBookingTest extends BaseClass {

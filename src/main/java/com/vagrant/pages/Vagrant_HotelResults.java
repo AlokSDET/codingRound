@@ -1,10 +1,10 @@
-package com.vagrant.Pages;
+package com.vagrant.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.vagrant.BaseClass.BaseClass;
+import com.vagrant.baseClass.BaseClass;
 
 public class Vagrant_HotelResults extends BaseClass {
 
