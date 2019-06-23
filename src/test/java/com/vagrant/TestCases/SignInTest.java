@@ -1,52 +1,49 @@
 package com.vagrant.TestCases;
-import com.sun.javafx.PlatformUtil;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SignInTest {
+import com.vagrant.BaseClass.BaseClass;
+import com.vagrant.Pages.Vagrant_SignIn;
+import com.vagrant.Util.Vagrant_Utility;
 
-    WebDriver driver = new ChromeDriver();
+public class SignInTest extends BaseClass {
 
-    @Test
-    public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
+	private Vagrant_SignIn vagrant_SignIn;
 
-        setDriverPath();
+	@BeforeClass
+	public void init() {
+		vagrant_SignIn = new Vagrant_SignIn();
+		// loading main page
+		driver.get(Config.getProperty("Testing_URL"));
+	}
 
-        driver.get("https://www.cleartrip.com/");
-        waitFor(2000);
+	@AfterClass
+	public void tearDown() {
+		// loading main page
+		driver.get(Config.getProperty("Testing_URL"));
+	}
 
-        driver.findElement(By.linkText("Your trips")).click();
-        driver.findElement(By.id("SignIn")).click();
+	@Test
+	public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
-        driver.findElement(By.id("signInButton")).click();
+		vagrant_SignIn.getYourTrips();
 
-        String errors1 = driver.findElement(By.id("errors1")).getText();
-        Assert.assertTrue(errors1.contains("There were errors in your submission"));
-        driver.quit();
-    }
+		vagrant_SignIn.clickOnSignInLink();
 
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
+		// Switch to signIn Frame
+		vagrant_SignIn.switchToSignInFrame();
 
-    private void setDriverPath() {
-        if (PlatformUtil.isMac()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-        if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
-        if (PlatformUtil.isLinux()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
-    }
+		vagrant_SignIn.clickOnSignInButton();
 
+		Assert.assertTrue(vagrant_SignIn.getSignInError().contains("There were errors in your submission"));
 
+		// Switch to main frame
+		Vagrant_Utility.switchToMainIframe();
+
+	}
 }

@@ -57,7 +57,7 @@ public class Vagrant_Utility extends BaseClass {
 
 		for (int i = 0; i < 25; i++) {
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 			}
 
@@ -77,21 +77,26 @@ public class Vagrant_Utility extends BaseClass {
 	}
 
 	public static void clickElement(WebElement e) {
-		explicitwait(2000, e);
+		explicitwait(10, e);
 		e.click();
 	}
 
 	public static void sendKeys(WebElement e, String s) {
-		explicitwait(2000, e);
+		explicitwait(10, e);
 		e.sendKeys(s);
 	}
 
+	public static String getText(WebElement e) {
+		explicitwait(10, e);
+		return e.getText();
+	}
+
 	public static void javaScriptClick(WebElement e) {
-		explicitwait(2000, e);
+		explicitwait(10, e);
 		je.executeScript("arguments[0].click();", e);
 	}
 
-	public static void explicitwait(int timeout, WebElement e) {
+	public static void explicitwait(long timeout, WebElement e) {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
 		wait.until(ExpectedConditions.visibilityOf(e));
 	}
@@ -106,5 +111,23 @@ public class Vagrant_Utility extends BaseClass {
 		} catch (InterruptedException e) {
 			e.printStackTrace(); // To change body of catch statement use File | Settings | File Templates.
 		}
+	}
+
+	// use of method overloading
+	public static void switchToFrame(WebElement iFrameElement) {
+		explicitwait(10, iFrameElement);
+		driver.switchTo().frame(iFrameElement);
+	}
+
+	public static void switchToFrame(int iFrameIndex) {
+		driver.switchTo().frame(iFrameIndex);
+	}
+
+	public static void switchToFrame(String iFrameName) {
+		driver.switchTo().frame(iFrameName);
+	}
+
+	public static void switchToMainIframe() {
+		driver.switchTo().defaultContent();
 	}
 }

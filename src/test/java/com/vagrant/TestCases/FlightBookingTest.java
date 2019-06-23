@@ -1,5 +1,6 @@
 package com.vagrant.TestCases;
 
+//use of import static
 import static com.vagrant.Util.Vagrant_Utility.checkPageIsReady;
 import static com.vagrant.Util.Vagrant_Utility.clickElement;
 import static com.vagrant.Util.Vagrant_Utility.isElementPresent;
@@ -11,12 +12,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.vagrant.BaseClass.BaseClass;
 import com.vagrant.Pages.Vagrant_FlightBooking;
 
+//use of inheritance oops concept
 public class FlightBookingTest extends BaseClass {
 
 	private Vagrant_FlightBooking vagrantFlightBookingPage;
@@ -24,6 +27,15 @@ public class FlightBookingTest extends BaseClass {
 	@BeforeClass
 	public void init() {
 		vagrantFlightBookingPage = new Vagrant_FlightBooking();
+		driver.get(Config.getProperty("Testing_URL") + "flights");
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+	}
+
+	@AfterClass
+	public void tearDown() {
+		// loading main page
+		driver.get(Config.getProperty("Testing_URL"));
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -47,6 +59,12 @@ public class FlightBookingTest extends BaseClass {
 
 	}
 
+	/**
+	 * use of java doc This method will select the given date from date picker.
+	 * 
+	 * @param travelDate: date should be in dd-month-YYYY format ex. 30-June-2019
+	 * @throws Exception
+	 */
 	private void selectDateFromDatePicker(String travelDate) throws Exception {
 		String dateToBeSelected = travelDate.split("-")[0];
 		String monthToBeSelected = travelDate.split("-")[1];

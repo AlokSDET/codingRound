@@ -6,17 +6,16 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.vagrant.BaseClass.BaseClass;
 
-public class Vagrant_FlighResults extends BaseClass{
+public class Vagrant_FlightResults extends BaseClass {
 
-	 
-    @FindBy(className = "searchSummary")
-    private WebElement searchSummary;
-    
-	public Vagrant_FlighResults() {
+	@FindBy(className = "searchSummary")
+	private WebElement searchSummary;
+
+	public Vagrant_FlightResults() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	public WebElement getSearchSummaryElement() {	
+
+	public WebElement getSearchSummaryElement() {
 		return searchSummary;
 	}
 }

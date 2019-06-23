@@ -3,6 +3,7 @@ package com.vagrant.Pages;
 import static com.vagrant.Util.Vagrant_Utility.clickElement;
 import static com.vagrant.Util.Vagrant_Utility.implicitwait;
 import static com.vagrant.Util.Vagrant_Utility.sendKeys;
+import static com.vagrant.Util.Vagrant_Utility.explicitwait;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.vagrant.BaseClass.BaseClass;
+import com.vagrant.Util.Vagrant_Utility;
 
 public class Vagrant_FlightBooking extends BaseClass {
 
@@ -34,42 +36,45 @@ public class Vagrant_FlightBooking extends BaseClass {
 
 	@FindBy(xpath = "//ul[@id='ui-id-2']//li")
 	private List<WebElement> destinationOptions;
-	
+
 	@FindBy(xpath = "//*[@id='ui-datepicker-div']//div[1]//div//div[1]//span[@class='ui-datepicker-year']")
 	private WebElement yearFromFrstPanelOfDatePicker;
 
 	@FindBy(xpath = "//*[@id='ui-datepicker-div']//div[1]//div//div[1]//span[@class='ui-datepicker-month']")
 	private WebElement monthFromFrstPanelOfDatePicker;
-		
+
 	@FindBy(xpath = "//*[@id='ui-datepicker-div']//div[2]//div//div[1]//span[@class='ui-datepicker-month']")
 	private WebElement monthFromScndPanelOfDatePicker;
-	
+
 	@FindBy(xpath = "//div/a[@class='nextMonth ']")
 	private WebElement nextMonthBtn;
-	
+
 	public Vagrant_FlightBooking() {
 		PageFactory.initElements(driver, this);
 	}
 
 	public String getCurrentYear() {
+		explicitwait(10, yearFromFrstPanelOfDatePicker);
 		return yearFromFrstPanelOfDatePicker.getText();
 	}
-	
+
 	public String getMonthFromFirstPanel_DatePicker() {
+		explicitwait(10, monthFromFrstPanelOfDatePicker);
 		return monthFromFrstPanelOfDatePicker.getText();
 	}
-	
+
 	public String getMonthFromSecondPanel_DatePicker() {
+		explicitwait(10, monthFromScndPanelOfDatePicker);
 		return monthFromScndPanelOfDatePicker.getText();
 	}
-	
+
 	public WebElement getNextMonthElement() {
 		return nextMonthBtn;
 	}
-	
-	public Vagrant_FlighResults clickSearchButton() {
+
+	public Vagrant_FlightResults clickSearchButton() {
 		clickElement(searchBtn);
-		return new Vagrant_FlighResults();
+		return new Vagrant_FlightResults();
 	}
 
 	public void selectTripType(String tripType) {
@@ -88,7 +93,8 @@ public class Vagrant_FlightBooking extends BaseClass {
 		sendKeys(fromTag, sourceCity);
 		// wait for the auto complete options to appear for the source
 		implicitwait(Config.getProperty("ImplicitWait"));
-		
+
+		// use of advance for loop.
 		for (WebElement e : originOptions) {
 			if (e.getText().toUpperCase().contains(sourceCity.toUpperCase())) {
 				clickElement(e);
