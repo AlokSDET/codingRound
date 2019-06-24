@@ -16,10 +16,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.vagrant.baseClass.BaseClass;
+import com.vagrant.baseClass.VagrantInterface;
 import com.vagrant.pages.Vagrant_FlightBooking;
 
 //use of inheritance oops concept
-public class FlightBookingTest extends BaseClass {
+public class FlightBookingTest extends BaseClass implements VagrantInterface {
 
 	private Vagrant_FlightBooking vagrantFlightBookingPage;
 

@@ -1,0 +1,42 @@
+Code review comments/Existing code issues:  :
+1. uses of Thread.sleep at most of the places which is not recommended as it hits the performance.
+2. Java is object oriented programming and existing code does not use any feature of oops concepts.
+3. Class name should start with capital letter, method and variable name should be in camel case.
+4. implicit wait , explicit wait can be used for synchronization instead of using thread.sleep which just pause the execution.
+5. URL , Source destination ,travel date are hard coded whch is not reusabled.insdtead can keep these things in property file/excel sheet.
+6. locator strategy is not strong, might fail at few places, other locator strategy like xpath, css can be used to increase of reliability to find the elements at run time.
+7. design pattern can be used like page factory.
+8. can be used framework like BDD ,data driven , hybrid(combination of data driven,Modular, linear).
+9. few reusable functions can be kept in utility file and can be recalled whenever needed by using static import.
+10. Test cases are failing , can be fixed by using select class and other Selenium concepts.
+11. date picker is not implemented.
+12. POM(page object model) can be used to design the object repository and can keep elements in thier respective pages.
+13. naming convention can be followed.
+14. can keep values in constant if values are used multiples times in project.
+15. can make reusable and linear so that readability can be improved.
+
+New changes as part of designing framework and advantages:
+
+1.  Created a Maven project and kept required dependency in pom.xml file.Also used surefire plugin for testng test cases execution.
+2.  Used page factory design pattern by using init method and kept elements locators in their respective pages.
+3.  Designed hybrid framework (kept data in config.properties), kept things in different packages and classes, hence used modular/linear framework concept.
+4.  Created Constant file to keep all constants together so that can be used across whole project whenever needed by using static import.
+5.  used Opps concepts , inheritance, method overloading, 
+6.  used TestNg annotations,testNg.xml so that all test cases can be executed in one go. 
+7.  used static, final keyword.
+8.  used exception handling .
+9.  used all types of wait (implicit and explicit wait).
+10. used method overriding by override existing Selenium methods like getTest, click, sendKeys etc.
+11. used of required collection concepts.
+12. shown use of java 8 
+13. use of encapsulation as kept all variables private and made accessible by getter.
+14. use of interface , kept method declaration and override in implemented classes based on thier usage.
+15.	use of advance for loop, for each method, switch case, constructor .
+16. kept testng.xml so that we can get report and can run all tests all together in one go.
+17. Reading properties file, kept all input data in config.properties , hence used data driven framework.
+18. Handled frame, date picker implementation 
+19. used git , maven , testng, selenium , java , 
+20. use of explicit and implicit wait.
+
+   
+ 

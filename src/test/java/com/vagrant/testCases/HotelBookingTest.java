@@ -15,9 +15,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.vagrant.baseClass.BaseClass;
+import com.vagrant.baseClass.VagrantInterface;
 import com.vagrant.pages.Vagrant_HotelBooking;
 
-public class HotelBookingTest extends BaseClass {
+public class HotelBookingTest extends BaseClass implements VagrantInterface {
 
 	private Vagrant_HotelBooking vagrantHotelBookingPage;
 
