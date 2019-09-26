@@ -130,4 +130,5 @@ public class Vagrant_Utility extends BaseClass {
 	public static void switchToMainIframe() {
 		driver.switchTo().defaultContent();
 	}
+
 }

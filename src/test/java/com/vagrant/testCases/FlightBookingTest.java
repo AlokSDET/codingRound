@@ -6,15 +6,23 @@ import static com.vagrant.util.Vagrant_Utility.isElementPresent;
 import static com.vagrant.util.Vagrant_Utility.waitFor;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.google.common.collect.Ordering;
 import com.vagrant.baseClass.BaseClass;
 import com.vagrant.baseClass.VagrantInterface;
 import com.vagrant.pages.Vagrant_FlightBooking;
@@ -53,6 +61,71 @@ public class FlightBookingTest extends BaseClass implements VagrantInterface {
 		vagrantFlightBookingPage.clickSearchButton();
 
 		checkPageIsReady();
+
+		// verify that result appears for the provided journey search
+		Assert.assertTrue(isElementPresent(By.className("searchSummary")));
+
+	}
+
+	@DataProvider(name = "travelDataDataProvider")
+	public Object[][] getInputTravelDataByDataProvider() {
+		return new Object[][] { { "Bangalore", "Delhi", "31-July-2019", "19-August-2019", "27-August-2019" } };
+	}
+
+	@Test(dataProvider = "travelDataDataProvider")
+	public void testThatResultsAppearForOneWayJourneyDataProvider(String from_City, String to_City, String travel_Date,
+			String checkIn_Date, String checkOut_Date) throws Exception {
+
+		vagrantFlightBookingPage.selectTripType("OneWay");
+
+		vagrantFlightBookingPage.enterSourceCity(from_City);
+
+		vagrantFlightBookingPage.enterDestinationCity(to_City);
+
+		selectDateFromDatePicker(travel_Date);
+
+		// all fields filled in. Now click on search
+		vagrantFlightBookingPage.clickSearchButton();
+
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+
+		for (int i = 0; i < 10; i++) {
+
+			je.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+		}
+
+		for (int i = 0; i < 10; i++) {
+
+			je.executeScript("window.scrollTo(document.body.scrollHeight, 0);");
+
+		}
+
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+
+		// List<WebElement> priceElementsList
+		// =driver.findElements(By.xpath("//ul[@class='listView
+		// flights']//th[@class='price']"));
+		List<WebElement> priceElementsList = driver
+				.findElements(By.xpath("//ul[@class='listView flights']//th[@class='price']"));
+
+		System.out.println(priceElementsList);
+
+		System.out.println(priceElementsList.size());
+
+		List<String> priceList = new ArrayList<String>();
+
+		for (WebElement priceElement : priceElementsList) {
+			priceList.add(priceElement.getText().toString().substring(3));
+		}
+
+		System.out.println(priceList);
+
+		boolean sorted = Ordering.natural().isOrdered(priceList);
+
+		System.out.println(sorted);
+
+		// checkPageIsReady();
 
 		// verify that result appears for the provided journey search
 		Assert.assertTrue(isElementPresent(By.className("searchSummary")));
