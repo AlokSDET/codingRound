@@ -17,7 +17,7 @@ public class BrowserStackSeleniumTest {
 
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("browser", "Chrome");
-		caps.setCapability("browser_version", "77.0");
+		caps.setCapability("browser_version", "76.0");
 		caps.setCapability("os", "Windows");
 		caps.setCapability("os_version", "10");
 		caps.setCapability("resolution", "1024x768");
