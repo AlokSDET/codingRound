@@ -24,6 +24,5 @@ public class CssExample extends BaseClass implements VagrantInterface {
 
 		driver.navigate().to("https://www.toolsqa.com/automation-practice-form/");
 		driver.findElement(By.cssSelector("input#lastname")).sendKeys("Shrivastava");
-		driver.findElement(By.cssSelector("button.btn btn-info")).click();
 	}
 }
