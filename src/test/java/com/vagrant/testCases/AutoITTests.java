@@ -9,7 +9,7 @@ import com.vagrant.baseClass.BaseClass;
 
 public class AutoITTests extends BaseClass {
 
-	@Test()
+	@Test(enabled = false)
 	public void autoItTest() throws IOException, InterruptedException {
 		driver.get("https://www.toolsqa.com/automation-practice-form");
 

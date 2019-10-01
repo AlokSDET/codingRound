@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class SeleniumGridTests {
 
-	@Test()
+	@Test(enabled = false)
 	public void test1() throws MalformedURLException {
 
 		// need to do setup for selenium grid , download selenium standalone server ,
