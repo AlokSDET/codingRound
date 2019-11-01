@@ -13,10 +13,10 @@ import com.vagrant.baseClass.BaseClass;
 
 // use of page factory design pattern.
 
-public class Vagrant_SignIn extends BaseClass {
+public class Vagrant_SignIn extends BasePage {
 
 	public Vagrant_SignIn() {
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 
 	@FindBy(linkText = "Your trips")

@@ -25,14 +25,14 @@ public class HotelBookingTest extends BaseClass implements VagrantInterface {
 	@BeforeClass
 	public void init() {
 		vagrantHotelBookingPage = new Vagrant_HotelBooking();
-		driver.get(Config.getProperty("Testing_URL") + "hotels");
+		driver.get(config.getProperty("Testing_URL") + "hotels");
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
 	@AfterClass
 	public void tearDown() {
 		// loading main page
-		driver.get(Config.getProperty("Testing_URL"));
+		driver.get(config.getProperty("Testing_URL"));
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
@@ -42,7 +42,7 @@ public class HotelBookingTest extends BaseClass implements VagrantInterface {
 
 		vagrantHotelBookingPage.enterHotelPlaceOrName("Indiranagar, Bangalore");
 
-		selectCheckIn_CheckOutDate(Config.getProperty("CheckIn_Date"), Config.getProperty("CheckOut_Date"));
+		selectCheckIn_CheckOutDate(config.getProperty("CheckIn_Date"), config.getProperty("CheckOut_Date"));
 
 		vagrantHotelBookingPage.selectTravellers("1 room, 2 adults");
 

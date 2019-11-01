@@ -35,14 +35,14 @@ public class FlightBookingTest extends BaseClass implements VagrantInterface {
 	@BeforeClass
 	public void init() {
 		vagrantFlightBookingPage = new Vagrant_FlightBooking();
-		driver.get(Config.getProperty("Testing_URL") + "flights");
+		driver.get(config.getProperty("Testing_URL") + "flights");
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
 	@AfterClass
 	public void tearDown() {
 		// loading main page
-		driver.get(Config.getProperty("Testing_URL"));
+		driver.get(config.getProperty("Testing_URL"));
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
@@ -51,11 +51,11 @@ public class FlightBookingTest extends BaseClass implements VagrantInterface {
 
 		vagrantFlightBookingPage.selectTripType("OneWay");
 
-		vagrantFlightBookingPage.enterSourceCity(Config.getProperty("From_City"));
+		vagrantFlightBookingPage.enterSourceCity(config.getProperty("From_City"));
 
-		vagrantFlightBookingPage.enterDestinationCity(Config.getProperty("To_City"));
+		vagrantFlightBookingPage.enterDestinationCity(config.getProperty("To_City"));
 
-		selectDateFromDatePicker(Config.getProperty("Travel_Date"));
+		selectDateFromDatePicker(config.getProperty("Travel_Date"));
 
 		// all fields filled in. Now click on search
 		vagrantFlightBookingPage.clickSearchButton();

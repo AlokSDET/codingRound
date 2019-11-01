@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.vagrant.baseClass.BaseClass;
 import com.vagrant.util.Vagrant_Utility;
 
-public class Vagrant_HotelBooking extends BaseClass {
+public class Vagrant_HotelBooking extends BasePage {
 
 	// Use of encapsulation by keeping all members private and keeping getter .
 	@FindBy(xpath = "//a[text()='Hotels']")
@@ -45,7 +45,7 @@ public class Vagrant_HotelBooking extends BaseClass {
 	private WebElement nextMonthBtn;
 
 	public Vagrant_HotelBooking() {
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 
 	public String getCurrentYear() {
@@ -77,7 +77,7 @@ public class Vagrant_HotelBooking extends BaseClass {
 		localityTextBox.clear();
 		sendKeys(localityTextBox, hotelPlaceOrName);
 		// wait for the auto complete options to appear for the source
-		implicitwait(Config.getProperty("ImplicitWait"));
+		implicitwait(config.getProperty("ImplicitWait"));
 		for (WebElement e : hotelsSuggestions) {
 			if (e.getText().toUpperCase().contains(hotelPlaceOrName.toUpperCase())) {
 				clickElement(e);

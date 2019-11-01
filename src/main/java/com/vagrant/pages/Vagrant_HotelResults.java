@@ -6,13 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.vagrant.baseClass.BaseClass;
 
-public class Vagrant_HotelResults extends BaseClass {
+public class Vagrant_HotelResults extends BasePage {
 
 	@FindBy(className = "searchSummary")
 	private WebElement searchSummary;
 
 	public Vagrant_HotelResults() {
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 
 	public WebElement getSearchSummaryElement() {

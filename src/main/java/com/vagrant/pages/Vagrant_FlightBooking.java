@@ -6,7 +6,9 @@ import static com.vagrant.util.Vagrant_Utility.implicitwait;
 import static com.vagrant.util.Vagrant_Utility.sendKeys;
 
 import java.util.List;
+import java.util.Properties;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.vagrant.baseClass.BaseClass;
 import com.vagrant.util.Vagrant_Utility;
 
-public class Vagrant_FlightBooking extends BaseClass {
+public class Vagrant_FlightBooking extends BasePage {
 
 	@FindBy(id = "OneWay")
 	private WebElement oneWay;
@@ -50,7 +52,7 @@ public class Vagrant_FlightBooking extends BaseClass {
 	private WebElement nextMonthBtn;
 
 	public Vagrant_FlightBooking() {
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 
 	public String getCurrentYear() {
@@ -92,7 +94,7 @@ public class Vagrant_FlightBooking extends BaseClass {
 		fromTag.clear();
 		sendKeys(fromTag, sourceCity);
 		// wait for the auto complete options to appear for the source
-		implicitwait(Config.getProperty("ImplicitWait"));
+		implicitwait(config.getProperty("ImplicitWait"));
 
 		// use of advance for loop.
 		for (WebElement e : originOptions) {
@@ -111,7 +113,7 @@ public class Vagrant_FlightBooking extends BaseClass {
 		toTag.clear();
 		sendKeys(toTag, destinationCity);
 		// wait for the auto complete options to appear for the destination
-		implicitwait(Config.getProperty("ImplicitWait"));
+		implicitwait(config.getProperty("ImplicitWait"));
 		for (WebElement e : destinationOptions) {
 			if (e.getText().toUpperCase().contains(destinationCity.toUpperCase())) {
 				clickElement(e);

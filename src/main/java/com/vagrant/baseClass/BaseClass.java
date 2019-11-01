@@ -22,7 +22,7 @@ import com.vagrant.util.Vagrant_Utility;
 
 public class BaseClass {
 
-	public static Properties Config = null;
+	public static Properties config = null;
 
 	public static String browserName;
 
@@ -36,9 +36,9 @@ public class BaseClass {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		Config = new Properties();
+		config = new Properties();
 		try {
-			Config.load(fs);
+			config.load(fs);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -49,7 +49,7 @@ public class BaseClass {
 
 		fileSetup();
 
-		browserName = Config.getProperty("BrowserName");
+		browserName = config.getProperty("BrowserName");
 
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			ChromeOptions options = new ChromeOptions();
@@ -79,12 +79,12 @@ public class BaseClass {
 			throw new Exception("Invalid Browser Name");
 		}
 
-		driver.get(Config.getProperty("Testing_URL"));
+		driver.get(config.getProperty("Testing_URL"));
 		driver.manage().window().maximize();
-		Reporter.log(Config.getProperty("Testing_URL") + " Opened");
+		Reporter.log(config.getProperty("Testing_URL") + " Opened");
 
 		// Applying implicit wait
-		Vagrant_Utility.implicitwait(Config.getProperty("ImplicitWait"));
+		Vagrant_Utility.implicitwait(config.getProperty("ImplicitWait"));
 
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);

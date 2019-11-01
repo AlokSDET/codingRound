@@ -18,13 +18,13 @@ public class SignInTest extends BaseClass implements VagrantInterface {
 	public void init() {
 		vagrant_SignIn = new Vagrant_SignIn();
 		// loading main page
-		driver.get(Config.getProperty("Testing_URL"));
+		driver.get(config.getProperty("Testing_URL"));
 	}
 
 	@AfterClass
 	public void tearDown() {
 		// loading main page
-		driver.get(Config.getProperty("Testing_URL"));
+		driver.get(config.getProperty("Testing_URL"));
 	}
 
 	@Test

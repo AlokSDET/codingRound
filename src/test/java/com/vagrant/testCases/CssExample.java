@@ -15,7 +15,7 @@ public class CssExample extends BaseClass implements VagrantInterface {
 	@BeforeClass
 	public void init() {
 
-		driver.get(Config.getProperty("Testing_URL") + "flights");
+		driver.get(config.getProperty("Testing_URL") + "flights");
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
