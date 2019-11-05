@@ -18,11 +18,17 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import com.vagrant.util.Vagrant_Utility;
 
 public class BaseClass {
 
 	public static Properties config = null;
+
+	public static ExtentReports report;
+
+	public static ExtentTest test;
 
 	public static String browserName;
 
@@ -97,6 +103,7 @@ public class BaseClass {
 			System.out.println("after test should run");
 			driver.quit();
 		}
+
 	}
 
 }
