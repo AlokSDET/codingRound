@@ -57,6 +57,9 @@ steps are asynchronous and gives random result.Thats why we are learning promise
 
 sendKeys , element are API from protractor , promise resolving is being taken care by protractor.
 
+angular website has some intelligence and can wait for click unitill page loads completely but
+hybrid or non angular application uses expected conditions for synchronization.
+ 
 if we want to perform anything on browser then protractor resolves promises its on our own(i.e. click, sendkeys) but 
 if we want to retireve anything from browser then it does not support prmose resolving.(
 i.e. title of browser, getTtitle, getText)
@@ -184,4 +187,80 @@ FileUtils.copyFile(screenshot, screenshotLocation);
 You can use fit() or fdescribe() instead of it() and describe() to achieve what is known as focussed test cases.
 To exclude a specific test case or spec, all you need to do is use xit() or xdescribe() instead of it() and describe(). 
 And that is it!
+
+
+--------------------------************************************--------------------------------------
+
+Protractor : 
+Angular framework developed by google to create front end application .
+Protractor is an automation tool to  develop angular application.It can be used to develop non angular app.
+
+protractor is node.js program, Jasmine bdd unit testing framework for protractor.like TestNG for selenium .
+Cucumber bdd framework can be used in TypeScript.
+
+
+-------------------*****************------------------
+
+TypeScript is super set of JavaScript, opps concepts is there in TypeScript.
+
+JavaScript compiler version is ES5 engine. From ES5 opps concepts came in JavaScript.
+
+Protractor API(Click, sendKeys, getText).
+
+------------------*****************---------------
+software/packages which are developed in node.js(backend language) are available in node repository.
+to download these protractor packages ,we need npm (node package manager). npm comes with node.js.
+
+to download protractor : npm install -g protractor
+
+// to get the version of protractor : protractor --version
+
+//WebDriver-Manager will be used to interact with browser by webdriver js.
+// WebDriver-Manager update : to update the webdriver-manager.
+// to start : WebDriver-Manager Start : First we need to start selenium server : it is mediator between protractor code and browser.
+which helps to connect application code with browser.Server will start at 4444.
+
+// to uninstall protractor : npm uninstall -g protractor
+//WebStorm is IDE for JavaScript given by IntelliJ
+// ECMA is javascript library. Jasmine BDD testing framework based on JavaScript.
+
+-------------------------*********************** JASMINE ******************-----------------------------
+TestSuite - collection of tests
+Describe = TestSuite 
+It= TestCase 
+
+Spec = Testfile =Class File.
+Every Spec should be Describe and IT blocks.
+
+
+Configuration file : which will be responsible for executing all spec files.(Cucumber runner file or TestNG.xml in testng)
+Jasmine supports JavaScript.
+
+Each test case is called spec.Spec if test file which contains multiuple tests.
+----------------**********************----------------------------------
+
+setup protractor with eclipse : 
+
+// First create JavasCRIPT PROJECT IN ECLIPSE which can be created in eclipse which supports java script.
+convert intern project ..now we can see protractor api by wrting dot and control space.
+
+intern option will be available only if we add angular js eclipse plugin.
+
+------------------------ * **************---------------
+// how to add test runner in eclipse for protractor project :
+
+copy protractor folder in local project reposioty : 
+create runner in configuration under node.js application ->
+main file : .cli under node module 
+argument : configuration file 
+
+
+
+
+
+
+
+
+
+
 */
