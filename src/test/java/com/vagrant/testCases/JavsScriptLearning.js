@@ -241,7 +241,9 @@ Each test case is called spec.Spec if test file which contains multiuple tests.
 
 setup protractor with eclipse : 
 
-// First create JavasCRIPT PROJECT IN ECLIPSE which can be created in eclipse which supports java script.
+// First create JavasCRIPT PROJECT IN ECLIPSE which can be created in eclipse which supports java script.if not found javascript project then 
+add new software javascript developement tools.
+
 convert intern project ..now we can see protractor api by wrting dot and control space.
 
 intern option will be available only if we add angular js eclipse plugin.
@@ -253,6 +255,71 @@ copy protractor folder in local project reposioty :
 create runner in configuration under node.js application ->
 main file : .cli under node module 
 argument : configuration file 
+
+----------------**************---------------------
+protractor learning :
+
+1. Global variable : browser, element, by, protractor
+browser: wrapps webdriver instance : for angular website: protractor waits for angular library to load if angular apps. browser.get(url)
+browser.driver : for non angular application.(protractor will wait for angular libarry but in non angular it will not be there so tro avoid this 
+  waitforangular(disabled)) or use browser.driver
+
+2. element: helper function for FINDING and interacting with webelement on DOM.it requires parameter as locator.
+
+3. by : element can be found by locator strategy 
+
+4. protractor :namespace which contains classes , variable.
+
+---------------------------**********------------
+
+locator strategy : css, name, id ,linktext, xpath, ClassName ,repeater, options,  model, binding, buttonText, 
+
+
+CSS == tagname[attributeName =value]
+
+Xpath is least preffered in protractor.
+
+
+//----------------------******    JASMINE   **************************---------------------
+jasimne takes care of handling promises.
+expect(actualResult).toBe(expectedResult);// TO COMPARE STRING
+expect(actualResult).not.toBe(expectedResult);
+expect(actualResult).toEqual(expectedResult);// TO COMPARE PRIMITIVE OR LITERAL OR VARIABLE.
+
+expect(actualResult).toBeNull(null);/
+
+expect(actualResult).toMatch(regular expression );/
+
+----------------------Protractor conf.js file****************----------------------
+
+
+conf.js
+
+
+capabilities : {
+
+  'browserName' : 'chrome',
+}
+
+
+webdriver-manager update --ie // it will download latest IE driver files 
+
+// for angular app - protractor waits untill all elements loads .
+// for non angular protractor still waits for angular app to loads : thats why we use below line 
+browser.waitForAngularEnabled(false)
+
+--------------------------********* Frames in protractor   *************------------------------
+one page is embeded in another page. page which is embeded called frame.
+browser.switchTo.frame(name or index or id);
+// to maximize the browser 
+
+browser.driver.manage().window().maximize();
+
+----------------------------*********************************************----------------------
+
+
+
+
 
 
 
