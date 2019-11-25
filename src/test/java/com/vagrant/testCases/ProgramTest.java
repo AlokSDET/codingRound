@@ -4,7 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import java.util.Arrays;
+
+
 public class ProgramTest {
+	
+    static boolean isAnagram(String a, String b) {
+        char charA [] = a.toCharArray();
+         char charB [] = b.toCharArray();
+
+        Arrays.sort(charA);
+        Arrays.sort(charB);
+
+        if(charA.length != charB.length) {
+                return false;
+        } else {
+            for(int i =0; i<a.length(); i++) {
+                if(charA[i] != charB[i]) {
+                   return false; 
+                }
+            }
+            return true;
+        }
+    }
 
 	public static void main(String[] args) {
 
@@ -24,6 +46,14 @@ public class ProgramTest {
 		for (Object output : listOfOutPut) {
 			System.out.println(output);
 		}
+		
+		
+		  Scanner scan = new Scanner(System.in);
+	        String a = scan.next();
+	        String b = scan.next();
+	        scan.close();
+	        boolean ret = isAnagram(a, b);
+	        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
 	}
 
 	private List<Object> createOutPutList(int n) {
@@ -41,5 +71,7 @@ public class ProgramTest {
 		}
 		return listOfOutPut;
 	}
+	
+	
 
 }

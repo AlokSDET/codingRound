@@ -22,6 +22,21 @@ public class JavaMiscConcepts extends BaseClass {
 
 		batch.waitFor();
 		
+		/*
+		 * ProcessBuilder pb = new ProcessBuilder();
+		 * pb.command("C:\\Users\\P10484475\\Desktop\\mybatchfile.bat");
+		 * 
+		 * Process process = Runtime.getRuntime().exec( "cmd /c mybatchfile.bat", null,
+		 * new File("C:\\Users\\P10484475\\Desktop\\"));
+		 */
+		
+		/*
+		 * Runtime runtime = Runtime.getRuntime(); Process batch =
+		 * runtime.exec("C:\\Users\\P10484475\\Desktop\\mybatchfile.bat");
+		 * 
+		 * batch.waitFor();
+		 */
+		
 	
 	}
 	

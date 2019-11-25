@@ -193,7 +193,7 @@ And that is it!
 
 Protractor : 
 Angular framework developed by google to create front end application .
-Protractor is an automation tool to  develop angular application.It can be used to develop non angular app.
+Protractor is an automation tool to  test angular application.It can be used to test non angular app.
 
 protractor is node.js program, Jasmine bdd unit testing framework for protractor.like TestNG for selenium .
 Cucumber bdd framework can be used in TypeScript.
@@ -316,7 +316,13 @@ browser.switchTo.frame(name or index or id);
 browser.driver.manage().window().maximize();
 
 ----------------------------*********************************************----------------------
+all locators : 
 
+grab all object from all rows: 
+
+// for practice :
+
+// upwork.com, posse.com
 
 
 
