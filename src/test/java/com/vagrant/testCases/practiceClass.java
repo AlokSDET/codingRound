@@ -44,4 +44,6 @@ public class practiceClass {
 			System.out.println(entry.getKey() + " " + entry.getValue());
 		}
 	}
+	
+	
 }

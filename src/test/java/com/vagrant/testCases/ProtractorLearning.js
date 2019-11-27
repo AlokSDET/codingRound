@@ -177,11 +177,80 @@ describe('Protractor Element Demo',function() {
 	console.log(text);
 	})
 
-	})
+  });
+});
+});
+
+// Mouse and keyboard actions in protractor
+  describe('Auto Suggest', function() {
+    it('should choose option from auto suggest drop down', function() {
+      browser.get('http://posse.com/');
+      //element(by.model("locationQuery")).sendKeys("river");
+      browser.actions().mouseMove(element(by.model("locationQuery")).sendKeys("london")).perform();
+
+      browser.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
+      browser.actions().sendKeys(protractor.Key.ENTER).perform().then(function() {
+        browser.sleep(500);
+      }
+      );
 
 
-	})
+    // search result validation 
+    // Window handling in protractor 
 
 
-	})
+    expect(element.all(by.css("div[ng-mouseover*='value of attribute']")).count()).toEqual(7);
+
+
+    element.all(by.css("div[ng-mouseover*='value of attribute']")).get(0).click();
+
+    element(by.css("a[ng-href='']")).click().then(function() {
+       browser.getAllWindowHandles().then(function(handles) {
+        browser.getTitle().then(function(title){
+          console.log("title of page after switching" + title);
+        });
+        browser.switchTo().window(handles[1]);
+        browser.getTitle().then(function(title){
+          console.log("title of page after switching" + title);
+        });
+        browser.switchTo().window(handles[0]);
+       });
+       browser.getTitle().then(function(title){
+        console.log("title of page after switching" + title);
+      });
+      browser.sleep(5000);
+    });
+    });
+
+// it block
+it("alerts", function() {
+// alerts will be coming in hybrid site(non angular + angular)
+
+  browser.waitForAngularEnabled(false);
+
+   browser.get("http://www.qaclickacademy.com/practice.php");
+
+   element(by.id("alertbtn")).click();
+
+   browser.switchTo().alert().accept().then(function() {
+
+    browser.sleep(5000);
+   });// click on ok 
+
+browser.switchTo().alert().dismiss();// click on cancel in alert
+
+
+
+
+
+
+
+
+});
+
+  });
+
+  
+
+
 

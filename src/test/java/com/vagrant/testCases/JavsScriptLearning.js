@@ -320,7 +320,20 @@ all locators :
 
 grab all object from all rows: 
 
-// for practice :
+sequence will not be executed untill we use perform.
+
+ for practice :
+// Difference between perform and build().perform() -? 
+
+perform will execute one action at time 
+build().perform() will execute all multiple actions at same time.
+---------------*********************______________________
+
+
+// for practice on angular application posse.com
+browser.actions()
+
+auto complete drop down when we type and suggest options can be handled by action class.
 
 // upwork.com, posse.com
 
