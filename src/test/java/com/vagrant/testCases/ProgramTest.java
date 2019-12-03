@@ -30,7 +30,13 @@ public class ProgramTest {
 	public static void main(String[] args) {
 
 		ProgramTest obj1 = new ProgramTest();
-
+		
+		for (int i = 1; i <=100; i++) {
+			Object n = obj1.checkDivisibilityForNoAndReturnValue(i);
+			System.out.println(n);
+			
+		}
+	
 		/*
 		 * List<Integer> inputList = new ArrayList<>(); inputList.add(3);
 		 * inputList.add(15);
@@ -48,13 +54,11 @@ public class ProgramTest {
 		 * (ret) ? "Anagrams" : "Not Anagrams" );
 		 */
 
-		String str = "[[{{}()]}]";
-		boolean b = obj1.validateBalanceParenthesis(str);
-		if (b) {
-			System.out.println("paranthesis is balanced");
-		} else {
-			System.out.println("paranthesis is not balanced");
-		}
+		/*
+		 * String str = "[[{{}()]}]"; boolean b = obj1.validateBalanceParenthesis(str);
+		 * if (b) { System.out.println("paranthesis is balanced"); } else {
+		 * System.out.println("paranthesis is not balanced"); }
+		 */
 	}
 
 	private List<Object> createOutPutList(int n) {
@@ -74,50 +78,65 @@ public class ProgramTest {
 	}
 
 	public boolean validateBalanceParenthesis(String str) {
-		
+
 		char[] ch = str.toCharArray();
-		
+
 		Stack<Character> st = new Stack<Character>();
-		
+
 		char c;
-		for(int i =0; i< ch.length; i++) {
-			
+		for (int i = 0; i < ch.length; i++) {
+
 			// pushing in stack if opening braces
-			if(ch[i]=='{' || ch[i]=='(' || ch[i]== '[') {
+			if (ch[i] == '{' || ch[i] == '(' || ch[i] == '[') {
 				st.push(ch[i]);
 			}
 			// poping from stack if closing braces
-			if(ch[i]=='}' || ch[i]==')' || ch[i]== ']') {
-			if(st.isEmpty()) {
-				return false;
-			} else {
-				//Character.compare(c, ch[i]);
-				c = st.pop();
-				if (!isMatchingPair(c, ch[i])) {
-				return false;
+			if (ch[i] == '}' || ch[i] == ')' || ch[i] == ']') {
+				if (st.isEmpty()) {
+					return false;
+				} else {
+					// Character.compare(c, ch[i]);
+					c = st.pop();
+					if (!isMatchingPair(c, ch[i])) {
+						return false;
+					}
 				}
 			}
-			}
 		}
-		
-		if(st.isEmpty()) {
+
+		if (st.isEmpty()) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
-		
+
 	}
-	
+
 	public boolean isMatchingPair(char c1, char c2) {
-		if(c1=='[' && c2==']') {
+		if (c1 == '[' && c2 == ']') {
 			return true;
-		}else if(c1=='{' || c2=='}') {
+		} else if (c1 == '{' || c2 == '}') {
 			return true;
-		}else if(c1=='(' || c2==')') {
+		} else if (c1 == '(' || c2 == ')') {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
+	}
+
+	private Object checkDivisibilityForNoAndReturnValue(int i) {
+
+			if (i % 3 == 0 && i % 5 == 0) {
+				return "AC";
+			} else if (i % 3 != 0 && i % 5 != 0) {
+				return i;
+			} else if (i % 3 == 0 && i % 5 != 0) {
+				return "A";
+			} else if (i % 5 == 0 && i % 3 != 0) {
+				return "C";
+			}
+			return i;
+
 	}
 
 }

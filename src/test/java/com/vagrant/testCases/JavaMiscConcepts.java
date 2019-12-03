@@ -48,6 +48,7 @@ public class JavaMiscConcepts extends BaseClass {
 		System.out.println("clicked on first anchor tag");
 	}
 	
+	
 	@Test
 	public void dataBaseConnectivity() throws ClassNotFoundException, SQLException {
 		
