@@ -1,10 +1,13 @@
 package com.vagrant.testCases;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -52,4 +55,25 @@ public class CssExample extends BaseClass implements VagrantInterface {
 			System.out.println("");
 		}
 	}
+	
+	
+	@Test() 
+	public void windoHandles() {
+		driver.get("http://toolsqa.com/automation-practice-switch-windows/");
+		driver.findElement(By.xpath("//strong[text()='Demo Website for Practice Automation']")).click();
+		// Returns unique handle for each window in the current driver instance.
+		Set<String> windowHandles = driver.getWindowHandles();
+		for(String windowHandle: windowHandles) {
+			System.out.println(windowHandle);
+		}
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+	 @Test(retryAnalyzer = IretryLogic.class)
+	 public void Test1()
+	 {
+	 Assert.assertEquals(false, true);
+	 }
+	 
 }

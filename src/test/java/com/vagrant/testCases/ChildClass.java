@@ -19,6 +19,10 @@ public class ChildClass extends ParentClass {
 	public void m3() {
 		System.out.println("Child class m3 method");
 	}
+	
+	public void m4() {
+		System.out.println("only in child");
+	}
 	/*
 	 * public static void main(String args[]) {
 	 * 

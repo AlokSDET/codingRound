@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -14,13 +16,25 @@ import com.vagrant.baseClass.BaseClass;
 
 public class JavaMiscConcepts extends BaseClass {
 
-	
+	static Node head;
+
+	static class Node {
+
+		int data;
+		Node next_node;
+
+		Node(int d) {
+			data = d;
+			next_node = null;
+		}
+	}
+		
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		Runtime runtime = Runtime.getRuntime();
-		Process batch = runtime.exec("C:\\Users\\P10484475\\Desktop\\mybatchfile.bat");
+		//Process batch = runtime.exec("C:\\Users\\P10484475\\Desktop\\mybatchfile.bat");
 
-		batch.waitFor();
+		//batch.waitFor();
 		
 		/*
 		 * ProcessBuilder pb = new ProcessBuilder();
@@ -36,7 +50,39 @@ public class JavaMiscConcepts extends BaseClass {
 		 * 
 		 * batch.waitFor();
 		 */
+		List<Integer> ll = new LinkedList<Integer>();
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		ll.add(4);
+		ll.add(5);
 		
+		reverseLinkedList(ll);
+		
+		
+		/// sum of first 1000 prime number 
+		
+	    int number = 2;
+        int count = 0;
+        long sum = 0;
+        while(count < 1000){
+            if(isPrimeNumber(number)){
+                sum += number;
+                count++;
+            }
+            number++;
+        }
+        System.out.println(sum);
+    }
+     
+    private static boolean isPrimeNumber(int number){
+         
+        for(int i=2; i<=number/2; i++){
+            if(number % i == 0){
+                return false;
+            }
+        }
+        return true;
 	
 	}
 	
@@ -66,6 +112,17 @@ public class JavaMiscConcepts extends BaseClass {
 		
 		con.close();
 		
+	}
+	
+	public static List<Integer> reverseLinkedList(List<Integer> ll) {
+		
+		// code to reverse a linked list 
+		
+		
+
+		
+		List<Integer> rl = new LinkedList<Integer>();
+		return rl;
 	}
 
 }
