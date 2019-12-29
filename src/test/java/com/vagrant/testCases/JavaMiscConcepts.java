@@ -57,7 +57,7 @@ public class JavaMiscConcepts extends BaseClass {
 		ll.add(4);
 		ll.add(5);
 		
-		reverseLinkedList(ll);
+	//	reverseLinkedList(ll);
 		
 		
 		/// sum of first 1000 prime number 
@@ -72,7 +72,9 @@ public class JavaMiscConcepts extends BaseClass {
             }
             number++;
         }
-        System.out.println(sum);
+     //   System.out.println(sum);
+        
+        checkJavaConcepts();
     }
      
     private static boolean isPrimeNumber(int number){
@@ -123,6 +125,44 @@ public class JavaMiscConcepts extends BaseClass {
 		
 		List<Integer> rl = new LinkedList<Integer>();
 		return rl;
+	}
+	
+	public static void checkJavaConcepts() {
+			
+		String a = "Java";
+		a = a +10;
+		
+		 int i = 10;
+		 
+		System.out.println(a );
+		
+		System.out.println(i++);// 10
+		System.out.println(i++);//11
+		System.out.println(++i);//13
+		//can use expression in switch case
+		switch(20/10) {
+		
+		case 1: System.out.println("case 1");
+		break;
+		
+		case 2: System.out.println("case 2");
+		break;
+		
+		default: 
+			System.out.println("invalid expression");
+			break;
+		}
+		
+		for(int j = 0; j< 5; j++) {
+			if(j==0) {
+				continue;
+				
+			}else {
+				System.out.println("does not match condition");
+			}
+			System.out.println("nono");
+		}
+	
 	}
 
 }
