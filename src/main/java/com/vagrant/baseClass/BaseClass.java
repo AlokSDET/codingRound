@@ -34,6 +34,9 @@ public class BaseClass {
 
 	public static WebDriver driver;
 
+	/**
+	 * This method is to load the property file.
+	 */
 	public static void fileSetup() {
 		FileInputStream fs = null;
 		// use of exception handling

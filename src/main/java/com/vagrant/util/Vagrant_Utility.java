@@ -97,8 +97,9 @@ public class Vagrant_Utility extends BaseClass {
 	}
 
 	public static void explicitwait(long timeout, WebElement e) {
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
-		wait.until(ExpectedConditions.visibilityOf(e));
+	//@SuppressWarnings("deprecation")
+		//WebDriverWait wait = new WebDriverWait(driver, timeout);
+		//wait.until(ExpectedConditions.visibilityOf(e));
 	}
 
 	public static void implicitwait(String timeout) {
