@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package testAssignments;
 
 import java.util.HashMap;
 import java.util.Hashtable;

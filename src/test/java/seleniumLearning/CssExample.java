@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package seleniumLearning;
 
 import java.util.List;
 import java.util.Set;

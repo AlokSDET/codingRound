@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package coreJavaLearning;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

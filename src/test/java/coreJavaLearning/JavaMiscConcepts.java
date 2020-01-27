@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package coreJavaLearning;
 
 import java.io.IOException;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package seleniumLearning;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

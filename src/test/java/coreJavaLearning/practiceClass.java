@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package coreJavaLearning;
 
 import java.util.ArrayList;
 import java.util.HashMap;

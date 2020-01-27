@@ -1,4 +1,4 @@
-package testautomationtools.jest;
+package javascript;
 
 public class WebDriverIo {
 

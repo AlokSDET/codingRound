@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package seleniumLearning;
 
 public class SeleniumCookies {
 

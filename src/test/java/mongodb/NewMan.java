@@ -1,4 +1,4 @@
-package com.vagrant.testCases;
+package mongodb;
 
 public class NewMan {
 
