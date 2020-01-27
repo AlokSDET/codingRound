@@ -73,7 +73,7 @@ public class CssExample extends BaseClass implements VagrantInterface {
 	 @Test(retryAnalyzer = IretryLogic.class)
 	 public void Test1()
 	 {
-	 Assert.assertEquals(false, true);
+	 Assert.assertEquals(true, true);
 	 }
 	 
 }

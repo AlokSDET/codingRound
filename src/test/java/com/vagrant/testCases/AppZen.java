@@ -1,12 +1,34 @@
 package com.vagrant.testCases;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
 public class AppZen {
 
 	public static void main(String[] args) {
 	
 		System.out.println(compressedString("aalokkkkkkdeeghtt") );
-		
+		hashMapHashTable();
 
+	}
+	
+	public static void hashMapHashTable() {
+		Map<String, String> mp =new HashMap<String, String>();	
+		mp.put("B", null);
+		mp.put("A", null);
+		mp.put(null, "Alok");
+		
+		System.out.println(mp.entrySet());
+		System.out.println(mp.get(null));
+		
+		System.out.println("hashtable concept");
+		Hashtable ht = new Hashtable();
+		ht.put("A", "sai");
+		ht.put("A", "alok");
+		ht.put("A", "abhinav");
+		System.out.println(ht.entrySet());
+		//System.out.println(ht.get(null));
 	}
 	
 	public  static String compressedString(String message) {
