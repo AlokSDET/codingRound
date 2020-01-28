@@ -2,6 +2,8 @@ package com.vagrant.testCases;
 
 import java.lang.reflect.Method;
 
+import javax.management.DescriptorKey;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,12 @@ import com.vagrant.baseClass.BaseClass;
 import com.vagrant.baseClass.VagrantInterface;
 import com.vagrant.pages.Vagrant_SignIn;
 import com.vagrant.util.Vagrant_Utility;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 
 public class SignInTest extends BaseClass implements VagrantInterface {
 
@@ -44,7 +52,10 @@ public class SignInTest extends BaseClass implements VagrantInterface {
 
 	}
 
-	@Test
+	@Test(priority = 1, description = "Erros display for incorrect credentials")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test case for checking that it displays error for incorret credentials.")
+	@Story("Story name to check login functionality for negative test case")
 	public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
 		System.out.println(test.getStartedTime());

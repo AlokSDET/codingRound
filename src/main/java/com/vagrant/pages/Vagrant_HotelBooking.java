@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.Select;
 import com.vagrant.baseClass.BaseClass;
 import com.vagrant.util.Vagrant_Utility;
 
+import io.qameta.allure.Step;
+
 public class Vagrant_HotelBooking extends BasePage {
 
 	// Use of encapsulation by keeping all members private and keeping getter .
@@ -71,6 +73,8 @@ public class Vagrant_HotelBooking extends BasePage {
 		clickElement(hotelLink);
 	}
 
+	//Allure reporting
+	@Step("Entering hotel or place name: {0} ")
 	public boolean enterHotelPlaceOrName(String hotelPlaceOrName) {
 		boolean flag = false;
 		clickElement(localityTextBox);

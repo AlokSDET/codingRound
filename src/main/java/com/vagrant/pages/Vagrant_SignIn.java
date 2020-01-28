@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.vagrant.baseClass.BaseClass;
 
+import io.qameta.allure.Step;
+
 // use of page factory design pattern.
 
 public class Vagrant_SignIn extends BasePage {
@@ -42,15 +44,19 @@ public class Vagrant_SignIn extends BasePage {
 		clickElement(signInLink);
 	}
 
+	//Allure reporting
+	@Step("Clicking on Sign in btn")
 	public void clickOnSignInButton() {
 		explicitwait(10, signInButton);
 		clickElement(signInButton);
 	}
 
+	@Step("Fetcing sign in error")
 	public String getSignInError() {
 		return getText(signInError);
 	}
 
+	@Step("Switching to frame")
 	public void switchToSignInFrame() {
 		switchToFrame(signInFrame);
 	}

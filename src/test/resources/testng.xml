@@ -3,7 +3,8 @@
 
 	<test name="Vagrant Test 1"><!--@BeforeTest runs here just once -->
 		<classes>
-			<class name="seleniumLearning.CssExample" />
+			<class name="com.vagrant.testCases.HotelBookingTest" />
+			<class name="com.vagrant.testCases.SignInTest" />
 		</classes>
 	</test> <!--@AfterTest runs here just once -->
 

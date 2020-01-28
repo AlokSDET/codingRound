@@ -18,6 +18,11 @@ import com.vagrant.baseClass.BaseClass;
 import com.vagrant.baseClass.VagrantInterface;
 import com.vagrant.pages.Vagrant_HotelBooking;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 public class HotelBookingTest extends BaseClass implements VagrantInterface {
 
 	private Vagrant_HotelBooking vagrantHotelBookingPage;
@@ -36,7 +41,10 @@ public class HotelBookingTest extends BaseClass implements VagrantInterface {
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
-	@Test
+	@Test(description = "it should search hotel_")
+	@Severity(SeverityLevel.BLOCKER)
+	@Description("Test case scenario : it should be able to search hotel.")
+	@Story("Story name: to check functionality whether it seraches hotel by hotel name.")
 	public void shouldBeAbleToSearchForHotels() throws Exception {
 		vagrantHotelBookingPage.openHotelsPage();
 
