@@ -18,6 +18,8 @@ import com.vagrant.pages.Vagrant_SignIn;
 import com.vagrant.util.Vagrant_Utility;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
@@ -56,6 +58,8 @@ public class SignInTest extends BaseClass implements VagrantInterface {
 	@Severity(SeverityLevel.NORMAL)
 	@Description("Test case for checking that it displays error for incorret credentials.")
 	@Story("Story name to check login functionality for negative test case")
+	@Feature("CL1234")
+	@Link("WWW.GOOGLE.COM")
 	public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
 		System.out.println(test.getStartedTime());

@@ -27,6 +27,11 @@ import com.vagrant.baseClass.BaseClass;
 import com.vagrant.baseClass.VagrantInterface;
 import com.vagrant.pages.Vagrant_FlightBooking;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+
+@Epic("Flight")
+@Feature("flight feature")
 //use of inheritance oops concept
 public class FlightBookingTest extends BaseClass implements VagrantInterface {
 
