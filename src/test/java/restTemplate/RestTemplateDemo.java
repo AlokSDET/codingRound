@@ -4,6 +4,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,13 +42,21 @@ public class RestTemplateDemo {
 	@Test()
 	public void getOrderDetailsByIdString() throws Exception {
 
-		int userId = 2;
-		String userDetailsResourceUrl = "https://reqres.in/api/users/";
+		//int userId = 2;
+		String userDetailsResourceUrl = "http://dummy.restapiexample.com/api/v1/employees";
 
 			RestTemplate restTemplate1 = new RestTemplate();
-		ResponseEntity<String> response = restTemplate1.getForEntity(userDetailsResourceUrl + userId, String.class);
-
-		System.out.println(response.getBody().toString());
+		ResponseEntity<Example> response = restTemplate1.getForEntity(userDetailsResourceUrl, Example.class);
+      // UserDetails userDetails =  gson.fromJson(response.getBody(), UserDetails.class);
+		System.out.println(response.getBody().getStatus());
+		System.out.println(response.getBody().getData());
+		List<Datum> datumList = response.getBody().getData();
+		List<String> employeeNameList = new ArrayList<String>();
+		for(Datum datum:datumList) {
+			employeeNameList.add(datum.getEmployeeName());
+		}
+		
+		assertTrue(employeeNameList.contains("Cedric Kelly"));
 		// assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 
 	}
