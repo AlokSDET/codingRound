@@ -29,7 +29,7 @@ public class WebDriverIo {
 	 
 	 3. npm install @wdio/cli // to install the cli.
 	 4. configure your test :
-	 .\node_modules\.bin\wdio config
+	  ./node_modules/.bin/wdio config
 	 	. Generate Configuration File
 		Next, you�ll generate a configuration file to store your WebdriverIO settings.
 
@@ -70,7 +70,11 @@ public class WebDriverIo {
 
 
 
-
+// remove selenium-standalone from services from wdio.conf.js file
+ * download selenium-standalone jar and set path so that it will be always up and running.
+ * execute below command 
+ 
+ * java -jar selenium-server-standalone-3.141.59.jar -port 4545
 	
 
 	
