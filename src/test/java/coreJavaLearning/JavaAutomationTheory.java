@@ -2,7 +2,16 @@ package coreJavaLearning;
 
 public class JavaAutomationTheory {
 
-	/*
+	/*Which one is preferred CSS OR XPATH ?
+	 * CSS selectors perform far better than Xpath .
+	 * A. Xpath engines are different in each browser, hence make them inconsistent
+	 * B.IE does not have a native xpath engine, 
+	 * therefore selenium injects its own xpath engine for compatibility of its API.
+	 * 
+	 * C. Xpath tend to become complex and hence make hard to read in my opinion
+	 * D. With XPath we can search element backward or forward in DOM while CSS works in forward only
+	 * E. Using XPath for Running Automation Scripts on Firefox and Chrome browsers recommended over CSS as they are more powerful
+	 * 
 	 * 1. Validation and Verification :
 	 * 
 	 * 
@@ -58,9 +67,42 @@ public class JavaAutomationTheory {
 	 * browser. Finally, HTTP server sends the response back to the automation test
 	 * script.
 	 * 
+	 * CSS Selector: 
+	 * .class name. or tagname.classname
+	 * #id name or  tagname#classname
+	 * 
+	 * div.classname div.classname : second one will ccome in first one, first one is parent.
+	 * 
+	 * div.classname > div.classname: direct parent child relationship
+	 * 
+	 * tagname.classname > a : direct links under this tag calss.
+	 * 
+	 * [attributename]: will give all elements which is having mentioned attribute name
+	 * 
+	 * tagname[attributename = attributevalue]
+	 * 
+	 * tagname.classname: nth-child(5): 5th element of the result
+	 * 
+	 * tagname.classname:not(.classname): all except class name which mentioned in not.
 	 * 
 	 * 
+	 * XPth: unordered list 
+	 *  //ul
 	 * 
+	 * total element in page : //*
+	 * any element under div element : //div//*
+	 * 
+	 * //img[@width>20] : image whose width is greater than 20
+	 * 
+	 * 
+	 * //li[@class='Wbt_B2 _1YVU3_']//span : all span under li
+	 * //li[@class='Wbt_B2 _1YVU3_']/span : all direct span under li
+	 * 
+	 * Any element on a Web page can be uniquely located using XPath. : true
+	 * 
+	 * Any element on a Web page can be uniquely located using CSS. false
+	 * 
+	 * //a[contains(.,'ProtoCommerce')] = //a[contains(text(),'ProtoCommerce')]
 	 * 
 	 * 6. Static Type and Dynamic typed language :
 	 * 
